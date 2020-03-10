@@ -8,6 +8,29 @@ class People
 end
 
 people = People.new
-p people
 
-People.greet
+people.greet
+
+class People
+  def name=(value)
+    @name = value
+  end
+  def name
+    @name
+  end
+end
+
+class People
+  attr_accessor :name
+end
+
+class People < ChildPeople
+end
+
+class ChildPeople
+  def self.bow
+    p "私は目からビームが出せます"
+  end
+end
+
+ChildPeople.bow
